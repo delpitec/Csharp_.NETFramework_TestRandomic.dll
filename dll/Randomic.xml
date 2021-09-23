@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Randomic</name>
+    </assembly>
+    <members>
+        <member name="T:Randomic.DeckCard">
+            <summary>
+            Deck card object representation 
+            </summary>
+        </member>
+        <member name="P:Randomic.DeckCard.SuitUTF16">
+            <summary>
+            Suit UTF-16 chacacter code 
+            </summary>
+        </member>
+        <member name="P:Randomic.DeckCard.SuitColor">
+            <summary>
+            Suit Color name (red or black)
+            </summary>
+        </member>
+        <member name="P:Randomic.DeckCard.Symbol">
+            <summary>
+            Card Symbol value (2 to 10, J, Q, K, A) 
+            </summary>
+        </member>
+        <member name="P:Randomic.DeckCard.Value">
+            <summary>
+            Numeric card value (1 to 14) 
+            </summary>
+        </member>
+        <member name="M:Randomic.DeckCard.#ctor">
+            <summary>
+            Initializes a default Card [ A | Heart | Value = 1 ]  
+            </summary>
+        </member>
+        <member name="M:Randomic.DeckCard.#ctor(Randomic.DeckCardSuit,System.Int32)">
+            <summary>
+            Initializes a Card according suit and numeric card value 
+            </summary>
+            <param name="suit">Selects the card suit (Enum.Heart,Enum.Diamond,Enum.Spades,Enum.Club).</param>
+            <param name="value">Numeric card value (1 to 14).</param>
+        </member>
+        <member name="M:Randomic.DeckCard.#ctor(Randomic.DeckCardSuit,System.String,System.Int32)">
+            <summary>
+            Initializes a Card according suit and numeric card value 
+            </summary>
+            <param name="suit">Selects the card suit (Enum.Heart,Enum.Diamond,Enum.Spades,Enum.Club).</param>
+            <param name="symbol">Symbol card value - case sensitive (2 to 10 , J , Q, K or A).</param>
+            <param name="aceValue">Mandatory if Symbol == "A" (1 or 14) | Optional (discarded) if Symbol != "A".</param>
+        </member>
+        <member name="M:Randomic.DeckCard.ChangeAceNumericValue(Randomic.DeckCard)">
+            <summary>
+            Invert A card possible value 
+            </summary>
+            <param name="aceCard">A Card that will have the value inverted.</param>
+        </member>
+        <member name="T:Randomic.DeckCardSuit">
+            <summary>
+            Group of possibles deck card suits with their attributes 
+            </summary>
+        </member>
+        <member name="F:Randomic.DeckCardSuit.Heart">
+            <summary>
+            Heart deck card suit (♥) parameters 
+            </summary>
+        </member>
+        <member name="F:Randomic.DeckCardSuit.Diamond">
+            <summary>
+            Diamond deck card suit (♦) parameters 
+            </summary>
+        </member>
+        <member name="F:Randomic.DeckCardSuit.Spade">
+            <summary>
+            Spades deck card suit (♠) parameters 
+            </summary>
+        </member>
+        <member name="F:Randomic.DeckCardSuit.Club">
+            <summary>
+            Spades deck card suit (♣) parameters 
+            </summary>
+        </member>
+        <member name="T:Randomic.RandomDeckCard">
+            <summary>
+            It contains randomic deck cards operations 
+            </summary>
+        </member>
+        <member name="M:Randomic.RandomDeckCard.Get">
+            <summary>
+            Choose a random deck card 
+            </summary>
+            <returns>An object containing deck card informations</returns>
+        </member>
+        <member name="M:Randomic.RandomDeckCard.GetExceptingOne(Randomic.DeckCard)">
+            <summary>
+            Choose a random deck card excluding the specified at cardExcepting param
+            </summary>
+            <param name="cardExcepting">Deck card that will be filtered during random choose.</param>
+            <returns>An object containing deck card informations</returns>
+        </member>
+        <member name="M:Randomic.RandomDeckCard.GetExceptingList(System.Collections.Generic.List{Randomic.DeckCard})">
+            <summary>
+            Choose a random deck card excluding the specified at list cardExcepting param
+            </summary>
+            <param name="cardExcepting">List of deck card that will be filtered during random choose.</param>
+            <returns>An object containing deck card informations</returns>
+        </member>
+    </members>
+</doc>
